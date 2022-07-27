@@ -17,6 +17,12 @@ export default function Home() {
         <Link href={'/about'}>
           <a>goto about</a>
         </Link>
+        <Link href={'/statics/static_page'}>
+          <a>goto static page</a>
+        </Link>
+        <Link href={'/statics/static_page_data'}>
+          <a>goto static page with data of building time</a>
+        </Link>
       </main>
 
     </div>
