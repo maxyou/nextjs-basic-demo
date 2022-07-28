@@ -23,6 +23,18 @@ export default function Home() {
         <Link href={'/statics/static_page_data'}>
           <a>goto static page with data of building time</a>
         </Link>
+        <Link href={'/static_paths/one'}>
+          <a>goto static page by dynamic path of one</a>
+        </Link>
+        <Link href={'/static_paths/two'}>
+          <a>goto static page by dynamic path of two</a>
+        </Link>
+        <Link href={'/static_paths/three'}>
+          <a>goto static page by dynamic path of three</a>
+        </Link>
+        <Link href={'/server_side/server_side_page'}>
+          <a>goto server side page</a>
+        </Link>
       </main>
 
     </div>

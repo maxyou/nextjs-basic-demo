@@ -14,7 +14,7 @@ export default function PostById({time, id}) {
   
         <main className={styles.main}>
   
-            <div>static page only</div>
+            <div>static page with paths</div>
             <div>building time: {time}</div>
             <div>id: {id}</div>
             <Link href={'/'}>

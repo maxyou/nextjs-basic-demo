@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 
-export default function StaticPageWithData({time}) {
+export default function ServerSidePage({data}) {
     return (
       <div className={styles.container}>
         <Head>
@@ -14,8 +14,8 @@ export default function StaticPageWithData({time}) {
   
         <main className={styles.main}>
   
-            <div>static page with data</div>
-            <div>building time: {time}</div>
+            <div>server side page</div>
+            <div>client visit at {data}</div>
             <Link href={'/'}>
                 <a>back to home</a>
             </Link>
@@ -26,9 +26,7 @@ export default function StaticPageWithData({time}) {
     )
   }
 
-  export async function getStaticProps(context){
-
-    return {
-        props:{time: JSON.stringify(new Date())}
-    }
-  }
+export async function getServerSideProps(){
+    console.log('run getServerSideProps()')
+    return {props:{data:JSON.stringify(new Date())}}
+}
