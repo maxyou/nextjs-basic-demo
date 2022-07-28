@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from '../../styles/Home.module.css'
 import Link from 'next/link'
 
-export default function StaticPaths({time, id}) {
+export default function ServerSidePaths({sid, data}) {
     return (
       <div className={styles.container}>
         <Head>
@@ -14,9 +14,9 @@ export default function StaticPaths({time, id}) {
   
         <main className={styles.main}>
   
-            <div>static page with paths</div>
-            <div>building time: {time}</div>
-            <div>id: {id}</div>
+            <div>server side page</div>
+            <div>client visit path: {sid}</div>
+            <div>client visit at {data}</div>
             <Link href={'/'}>
                 <a>back to home</a>
             </Link>
@@ -27,25 +27,14 @@ export default function StaticPaths({time, id}) {
     )
   }
 
+export async function getServerSideProps(context){
 
-  export async function getStaticPaths(){
-    return {
-        paths:[
-            {params:{id:"one"}},
-            {params:{id:"two"}},
-            {params:{id:"three"}},
-        ],
-        fallback:false
-    }
-  }
+    console.log('run getServerSideProps()')
 
-  export async function getStaticProps({params}){
+    console.log(`getServerSideProps context.params.sid=${context.params.sid}`)    
 
-    return {
-        props:{
-            time: JSON.stringify(new Date()),
-            id: params.id
-        }
-    }
-  }
-
+    return {props:{
+        sid:context.params.sid,
+        data:JSON.stringify(new Date())
+    }}
+}
