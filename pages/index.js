@@ -21,7 +21,7 @@ export default function Home() {
           <a>goto static page</a>
         </Link>
         <Link href={'/statics/static_page_data'}>
-          <a>goto static page with data of building time</a>
+          <a>goto static page with data at building time</a>
         </Link>
         <Link href={'/static_paths/one'}>
           <a>goto static page by dynamic path of one</a>
@@ -34,6 +34,18 @@ export default function Home() {
         </Link>
         <Link href={'/server_side/server_side_page'}>
           <a>goto server side page</a>
+        </Link>
+        <Link href={'/server_side_paths/abc'}>
+          <a>goto server side path: abc</a>
+        </Link>
+        <Link href={'/server_side_paths/123'}>
+          <a>goto server side path: 123</a>
+        </Link>
+        <Link href={'/client_side/client_side'}>
+          <a>goto client side</a>
+        </Link>
+        <Link href={'/client_side/client_side_swr'}>
+          <a>goto client side swr</a>
         </Link>
       </main>
 
